@@ -3,6 +3,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const QuestionButtonClose = document.querySelectorAll('[data-btn-close]');
     const QuestionButtonOpen = document.querySelectorAll('[data-btn-open]');
 
+    const HeroSection = document.querySelector('.hero');
+    const AlturaHero = HeroSection.clientHeight;
+
+    window.addEventListener('scroll', function() {
+        const PosicaoAtual = window.scrollY;
+        if (PosicaoAtual < AlturaHero) {
+            OcultarElementosDoHeader()
+        } else {
+            ExibeElementosDoHeader()
+        }
+    })
+
     for (let i = 0; i < Buttons.length; i++) {
         Buttons[i].addEventListener('click', function(botao) {
             const TabTarget = botao.target.dataset.tabButton;
@@ -49,6 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     }
 })
+
+function OcultarElementosDoHeader() {
+    const header = document.querySelector('header');
+    header.classList.add('header--is-hidden');
+}
+
+function ExibeElementosDoHeader() {
+    const header = document.querySelector('header');
+    header.classList.remove('header--is-hidden');
+}
 
 function ButtonHideAll() {
     const ButtonContainer = document.querySelectorAll('[data-tab-button]');
