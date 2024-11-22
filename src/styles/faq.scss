@@ -1,0 +1,49 @@
+@use 'variaveis';
+
+.faq {
+    padding: 5.6vw;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__questions {
+        &__item {
+            background-color: #13151d;
+            margin-bottom: 16px;
+
+            &__question {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+
+                &__box {
+                    flex: 1;
+                    color: #ffffff;
+                    font-size: 20px;
+                    padding: 24px;
+                }
+
+                &__sign {
+                    color: #ffffff;
+                    font-size: 24px;
+                    font-style: bold;
+                    cursor: pointer;
+                }
+            }
+
+            &__answer-closed {
+                display: none;
+            }
+
+            &__answer-opened {
+                display: flex;
+                height: auto;
+                align-items: start;
+                padding: 24px;
+                border-top: 1px solid #ffffff;
+            }
+        }
+    }
+}
